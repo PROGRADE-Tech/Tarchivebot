@@ -13,7 +13,6 @@ module.exports = {
 		this.app.set('views', this.VIEWS);
 		this.app.set('view engine', this.ENGINE);
 
-		//this.app.use(express.static(path.join(__dirname, '../public')));
 		this.app.get('/', function(req, res) {
 			res.render('index', { title: 'Tarchivebot', message: 'Welcome' });
 		});
