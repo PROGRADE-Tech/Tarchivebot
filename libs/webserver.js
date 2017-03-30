@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
 
 	PORT: 3000,
-	VIEWS: './views',
+	VIEWS: './views/pug',
 	ENGINE: 'pug',
 	app: express(),
 
