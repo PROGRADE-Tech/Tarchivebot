@@ -4,7 +4,8 @@
 	"description": "A Telegram bot that logs your chat and provides you with a key to look up statistics",
 	"main": "app.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app.js"
 	},
 	"dependencies": {
 		"express": "^4.13.3"
