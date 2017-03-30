@@ -1,25 +1,26 @@
 {
-	"name": "tarchivebot",
-	"version": "1.0.0",
-	"description": "A Telegram bot that logs your chat and provides you with a key to look up statistics",
-	"main": "app.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node app.js"
-	},
-	"dependencies": {
-		"express": "^4.13.3",
-		"pug": "^2.0.0-alpha6",
-		"node-sass": "~4.5.2"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/fuerbringer/Tarchivebot.git"
-	},
-	"author": "Severin Fürbringer",
-	"license": "AGPL-3.0",
-	"bugs": {
-		"url": "https://github.com/fuerbringer/Tarchivebot/issues"
-	},
-	"homepage": "https://github.com/fuerbringer/Tarchivebot#readme"
+  "name": "tarchivebot",
+  "version": "1.0.0",
+  "description": "A Telegram bot that logs your chat and provides you with a key to look up statistics",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "node-sass": "~4.5.2",
+    "node-sass-middleware": "^0.11.0",
+    "pug": "^2.0.0-alpha6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuerbringer/Tarchivebot.git"
+  },
+  "author": "Severin Fürbringer",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/fuerbringer/Tarchivebot/issues"
+  },
+  "homepage": "https://github.com/fuerbringer/Tarchivebot#readme"
 }
