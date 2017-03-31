@@ -1,9 +1,43 @@
 nav.navbar.navbar-default
   .container-fluid
     .navbar-header
-      button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+      button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#tarchive-nav" aria-expanded="false")
         span.sr-only Toggle Nav
         span.icon-bar
         span.icon-bar
         span.icon-bar
-          
+      a.navbar-brand(href="#") Tarchivepanel
+    .collapse.navbar-collapse(id="tarchive-nav")
+      ul.nav.navbar-nav
+        //- li.active
+        li
+          a(href="#") Table
+        li
+          a(href="#") Fancy Graph
+
+
+
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href="#") About
+        li
+          //- TODO: try add GH icon
+          a(href="https://github.com/fuerbringer/Tarchivebot") Source
+
+
+
+
+//-
+
+      <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+       <li><a href="#">Link</a></li>
+       <li class="dropdown">
+         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+           <li><a href="#">Action</a></li>
+           <li><a href="#">Another action</a></li>
+           <li><a href="#">Something else here</a></li>
+           <li role="separator" class="divider"></li>
+           <li><a href="#">Separated link</a></li>
+           <li role="separator" class="divider"></li>
+           <li><a href="#">One more separated link</a></li>
