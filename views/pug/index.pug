@@ -1,7 +1,12 @@
 doctype html
 html
-	head
-		title!= title
-		link(rel='stylesheet', href='/css/main.css')
+	include components/head
+
 	body
+		include components/navbar
 		h1!= message
+		.row
+			.col-sm-6
+				p LEFT
+			.col-sm-6
+				p RITE
