@@ -1,10 +1,15 @@
 doctype html
-html
+html(ng-app="tarchive")
 	include components/head
 
-	body
-		include components/navbar
 
-		h1 Welcome
+	body(ng-controller="CoreController")
+		include components/navbar
+		.container
+			.row(ng-if="content == 'table'")
+				include components/table
+			.row(ng-if="content == 'graph'")
+				h1 graph
+
 
 		include components/footer
