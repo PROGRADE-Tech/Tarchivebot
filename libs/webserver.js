@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const sassMiddleware = require('node-sass-middleware')
-const appDir = path.dirname(require.main.filename);
+const appDir = path.dirname(require.main.filename)
 
 module.exports = {
 	PORT: 3000,
@@ -21,10 +21,10 @@ module.exports = {
 				indentedSyntax: false,
 				debug: true,
 			})
-		);
+		)
 
 		// Serve files other than compiled pug markup:
-		this.app.use(express.static(path.join(__dirname, '../public')));
+		this.app.use(express.static(path.join(__dirname, '../public')))
 
 		this.app.get('/', function(req, res) {
 			res.render('index', { title: 'Tarchivebot', message: 'Welcome' })
