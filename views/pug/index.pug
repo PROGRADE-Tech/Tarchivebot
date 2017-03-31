@@ -6,6 +6,7 @@ html(ng-app="tarchive")
 	body(ng-controller="CoreController")
 		include components/navbar
 		.container
+			h1 {{key}}
 			.row(ng-if="content == 'table'")
 				include components/table
 			.row(ng-if="content == 'graph'")
