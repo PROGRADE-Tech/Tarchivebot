@@ -4,6 +4,7 @@
  */
 const telegramBot = require('node-telegram-bot-api')
 const jsonFile = require('jsonfile')
+const logger = require('./logger')
 
 module.exports = {
 
@@ -11,16 +12,16 @@ module.exports = {
     if(configFile) {
       jsonFile.readFile(configFile, function(err, obj) {
         bot = new telegramBot(obj.token, { polling: true })
+        logger.connect(obj.db_host, obj.db_user, obj.db_name, obj.db_pass)
+        logger.init()
 
+        // Log message
         bot.onText(/.*/, function(msg, match) {
           var chatId = msg.chat.id
-          var resp = match[0]
-          //bot.sendMessage(chatId, "You said " + resp)
-          // TODO
-          // Log message
-          // Insert into database
+          logger.logMessage(match[0])
         })
 
+        // Greeting
         bot.onText(/\/start/, function(msg, match) {
           var chatId = msg.chat.id
           bot.sendMessage(chatId,
@@ -29,6 +30,7 @@ module.exports = {
           )
         })
 
+        // Return user token
         bot.onText(/\/token/, function(msg, match) {
           var chatId = msg.chat.id
           // Provide SHA-256 token to for this chat (NOT the telegram token)
