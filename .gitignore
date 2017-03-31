@@ -1,3 +1,7 @@
+# Custom
+*.css
+
+
 # Logs
 logs
 *.log
