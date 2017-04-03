@@ -1,1 +1,8 @@
 h1 table
+table(ng-table="messageTable")
+  tr(ng-repeat="msg in tableData")
+    td(data-title="'Username'") {{msg.username}}
+    td(data-title="'First Name'") {{msg.firstName}}
+    td(data-title="'Last Name'") {{msg.lastName}}
+    td(data-title="'Message'") {{msg.message}}
+    td(data-title="'Timestamp'") {{msg.timestamp}}
