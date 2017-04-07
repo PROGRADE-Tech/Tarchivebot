@@ -3,7 +3,7 @@ const webserver = require('./libs/webserver')
 const api = require('./libs/api')
 
 // Part 1: run the telegram bot (and collect data)
-//bot.run('config/auth.json')
+bot.run('config/auth.json')
 
 // Part 2: serve the data
 webserver.serve()
