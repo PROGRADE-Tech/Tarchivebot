@@ -12,7 +12,7 @@ module.exports = {
     if(configFile) {
       jsonFile.readFile(configFile, function(err, obj) {
         bot = new telegramBot(obj.token, { polling: true })
-        logger.connect(obj.db_host, obj.db_user, obj.db_name, obj.db_pass)
+        logger.connect(obj.db_name)
         logger.init()
 
         // Log message
