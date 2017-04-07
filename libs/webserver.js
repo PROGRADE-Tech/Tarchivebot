@@ -32,7 +32,7 @@ module.exports = {
 
 		var server = this.app.listen(this.app.get('port'), function() {
 			var port = server.address().port
-			console.log(__filename + ': Serving static files from ./public to  localhost:' + port)
+			console.log(__filename + ':\tServing static files from ./public to  localhost:' + port)
 		})
 	}
 }
