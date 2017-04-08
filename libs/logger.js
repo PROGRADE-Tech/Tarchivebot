@@ -60,8 +60,29 @@ module.exports = {
     return chatId
   },
 
+  logUserType: function(name) {
+    var typeId = -1
+    if(name !== undefined) {
+      var db = this.db
+
+      this.db.serialize(function() {
+        var stmt = db.prepare("INSERT OR IGNORE INTO user_type (id, name) VALUES (null,?)")
+        stmt.run(name)
+        stmt.finalize()
+      })
+
+      this.db.each("SELECT rowid AS id FROM user_type WHERE name = ?", name, function(err, row) {
+        typeId = row.id
+      })
+    }
+    return typeId
+  },
+
   logMessage: function(msg) {
     const chatDbId = this.logChat(msg.chat.id)
+    const userTypeDbId = this.logUserType(msg.chat.type)
     // TODO Log message
+    // TODO Log user
+    // TODO Log message type
   }
 }
