@@ -5,6 +5,8 @@ module.exports.db
 
 module.exports = {
 
+  SALT_SIZE: 64,
+
   connect: function(database) {
     // Use connect method to connect to the Server
     console.log(__filename + ':\tOpening SQLite3 database `' + database + '`...');
@@ -22,14 +24,23 @@ module.exports = {
     */
   },
 
+  generateApiKey: function(str) {
+      const salt = crypto.randomBytes(this.SALT_SIZE).toString('hex')
+      const input = str + salt;
+      const apiKey = crypto.createHash('sha256')
+                            .update(input)
+                            .digest('base64');
+      return apiKey;
+  },
+
   /**
    * Log chat name and generate salted API key
    */
   logChat: function(name) {
     if(name !== undefined) {
-      const salt = crypto.randomBytes(256).toString('hex');
-      console.log('salt: ' + hash)
-      console.log('name: ' + name)
+      const apiKey = this.generateApiKey(name)
+      // TODO insert or ignore chat
+      console.log('key: ' + apiKey)
     }
     return 1
   },
