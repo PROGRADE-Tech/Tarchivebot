@@ -1,7 +1,4 @@
 {
 "token":"abcdefghi:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-"db_host":"mongodb://localhost:27017/myproject",
-"db_user":"tarchivebot",
-"db_pass":"verysecure",
-"db_name":"admin"
+"db_name":"db/tarchive.db"
 }

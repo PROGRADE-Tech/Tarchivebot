@@ -1,5 +1,6 @@
 # Custom
 *.css
+tarchive.db
 
 # Authentication config for Telegram-Bot token and DB credidentials
 auth.json
