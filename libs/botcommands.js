@@ -17,7 +17,7 @@ module.exports = {
         // Log message
         bot.onText(/.*/, function(msg, match) {
           var chatId = msg.chat.id
-          logger.logMessage(match[0])
+          logger.logMessage(msg)
         })
 
         // Greeting
