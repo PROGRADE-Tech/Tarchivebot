@@ -1,4 +1,4 @@
-const sqlite3 = require('sqlite3').verbose()
+const sqlite3 = require('sqlite3')
 const crypto = require('crypto')
 
 module.exports.db
@@ -25,28 +25,43 @@ module.exports = {
   },
 
   generateApiKey: function(str) {
-      const salt = crypto.randomBytes(this.SALT_SIZE).toString('hex')
-      const input = str + salt;
-      const apiKey = crypto.createHash('sha256')
+      var api = {}
+      api.salt = crypto.randomBytes(this.SALT_SIZE).toString('hex')
+      const input = str + api.salt
+      api.key = crypto.createHash('sha256')
                             .update(input)
-                            .digest('base64');
-      return apiKey;
+                            .digest('base64')
+      return api
   },
 
   /**
    * Log chat name and generate salted API key
    */
   logChat: function(name) {
+    var chatId = -1
     if(name !== undefined) {
-      const apiKey = this.generateApiKey(name)
-      // TODO insert or ignore chat
-      console.log('key: ' + apiKey)
+      const apiData = this.generateApiKey(name)
+      var db = this.db
+      var apiKey = apiData.key
+      var apiKeySalt = apiData.salt
+
+      // Log the chat id and generate an API key
+      this.db.serialize(function() {
+        var stmt = db.prepare("INSERT OR IGNORE INTO chat (id, name, api_key, api_key_salt) VALUES (null,?,?,?)")
+        stmt.run(name, apiKey, apiKeySalt)
+        stmt.finalize()
+      })
+
+      // Retrieve the chat primary key the message was sent from
+      this.db.each("SELECT rowid AS id FROM chat WHERE name = ?", name, function(err, row) {
+        chatId = row.id
+      })
     }
-    return 1
+    return chatId
   },
 
   logMessage: function(msg) {
-    // TODO Log message
     const chatDbId = this.logChat(msg.chat.id)
+    // TODO Log message
   }
 }
