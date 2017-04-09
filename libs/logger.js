@@ -11,17 +11,6 @@ module.exports = {
     // Use connect method to connect to the Server
     console.log(__filename + ':\tOpening SQLite3 database `' + database + '`...');
     this.db = new sqlite3.Database(database);
-    tmpDb = this.db;
-    /*
-    this.db.serialize(function() {
-      var stmt = tmpDb.prepare("INSERT INTO chat (name,api_key) VALUES (?,?)");
-      for (var i = 0; i < 10; i++) {
-        stmt.run("Ipsum " + i, "key" + i);
-      }
-      stmt.finalize();
-    });
-    this.db.close();
-    */
   },
 
   generateApiKey: function(str) {
@@ -71,7 +60,6 @@ module.exports = {
           callback(row.id)
         })
       })
-
     }
   },
 
@@ -105,14 +93,29 @@ module.exports = {
     }
   },
 
-  logMessage: function(msg) {
+  logMessageData: function(data, chatId, userId, messageTypeId, callback) {
+    var messageId = -1
+    if(data !== undefined) {
+      var db = this.db
+      this.db.serialize(function() {
+        var stmt = db.prepare("INSERT INTO message (id, data, chat_id, user_id, message_type_id) VALUES (null,?,?,?,?)")
+        stmt.run(data, chatId, userId, messageTypeId)
+        stmt.finalize()
+        db.each("SELECT last_insert_rowid() as id", function(err, row) {
+          callback(row.id)
+        })
+      })
+    }
+  },
 
+  logMessage: function(msg) {
     this.logChat(msg.chat.id, (chatId) => {
       this.logUserType(msg.chat.type, (typeId) => {
         this.logUser(msg.chat.username, msg.chat.first_name, msg.chat.last_name, typeId, (userId) => {
           this.logMessageType(msg.chat.type, (messageTypeId) => {
-              console.log(messageTypeId)
-              // TODO Log message
+            this.logMessageData(msg.text, chatId, userId, messageTypeId, (messageId) => {
+              // Message at id `messageId` has been logged
+            })
           })
         })
       })
