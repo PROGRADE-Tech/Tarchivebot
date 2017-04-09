@@ -87,7 +87,21 @@ module.exports = {
           callback(row.id)
         })
       })
+    }
+  },
 
+  logMessageType: function(name, callback) {
+    var messageTypeId = -1
+    if(name !== undefined) {
+      var db = this.db
+      this.db.serialize(function() {
+        var stmt = db.prepare("INSERT OR IGNORE INTO message_type (id, name) VALUES (null,?)")
+        stmt.run(name)
+        stmt.finalize()
+        db.each("SELECT rowid AS id FROM message_type WHERE name = ?", name, function(err, row) {
+          callback(row.id)
+        })
+      })
     }
   },
 
@@ -95,13 +109,12 @@ module.exports = {
 
     this.logChat(msg.chat.id, (chatId) => {
       this.logUserType(msg.chat.type, (typeId) => {
-        console.log(chatId)
-        console.log(typeId)
         this.logUser(msg.chat.username, msg.chat.first_name, msg.chat.last_name, typeId, (userId) => {
-          console.log(userId)
+          this.logMessageType(msg.chat.type, (messageTypeId) => {
+              console.log(messageTypeId)
+              // TODO Log message
+          })
         })
-        // TODO Log message
-        // TODO Log message type
       })
     })
   }
