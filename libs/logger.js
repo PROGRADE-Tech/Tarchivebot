@@ -110,8 +110,8 @@ module.exports = {
 
   logMessage: function(msg) {
     this.logChat(msg.chat.id, (chatId) => {
-      this.logUserType(msg.chat.type, (typeId) => {
-        this.logUser(msg.chat.username, msg.chat.first_name, msg.chat.last_name, typeId, (userId) => {
+      this.logUserType(msg.from.id, (typeId) => {
+        this.logUser(msg.from.username, msg.from.first_name, msg.from.last_name, typeId, (userId) => {
           this.logMessageType(msg.chat.type, (messageTypeId) => {
             this.logMessageData(msg.text, chatId, userId, messageTypeId, (messageId) => {
               // Message at id `messageId` has been logged

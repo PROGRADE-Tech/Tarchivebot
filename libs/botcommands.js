@@ -16,6 +16,7 @@ module.exports = {
 
         // Log message
         bot.onText(/.*/, function(msg, match) {
+          //console.log(msg)
           logger.logMessage(msg)
         })
 
