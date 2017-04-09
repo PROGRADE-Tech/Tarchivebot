@@ -37,7 +37,7 @@ module.exports = {
   /**
    * Log chat name and generate salted API key
    */
-  logChat: function(name) {
+  logChat: function(name, callback) {
     var chatId = -1
     if(name !== undefined) {
       const apiData = this.generateApiKey(name)
@@ -54,13 +54,12 @@ module.exports = {
 
       // Retrieve the chat primary key the message was sent from
       this.db.each("SELECT rowid AS id FROM chat WHERE name = ?", name, function(err, row) {
-        chatId = row.id
+        callback(row.id)
       })
     }
-    return chatId
   },
 
-  logUserType: function(name) {
+  logUserType: function(name, callback) {
     var typeId = -1
     if(name !== undefined) {
       var db = this.db
@@ -72,17 +71,24 @@ module.exports = {
       })
 
       this.db.each("SELECT rowid AS id FROM user_type WHERE name = ?", name, function(err, row) {
-        typeId = row.id
+        callback(row.id)
       })
     }
-    return typeId
+  },
+
+  logUser: function(name, firstName, lastName, userTypeId) {
+
   },
 
   logMessage: function(msg) {
-    const chatDbId = this.logChat(msg.chat.id)
-    const userTypeDbId = this.logUserType(msg.chat.type)
-    // TODO Log message
-    // TODO Log user
-    // TODO Log message type
+    this.logChat(msg.chat.id, (chatId) => {
+      this.logUserType(msg.chat.type, (typeId) => {
+        console.log(chatId)
+        console.log(typeId)
+        // TODO Log message
+        // TODO Log user
+        // TODO Log message type
+      })
+    })
   }
 }
