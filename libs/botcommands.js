@@ -31,6 +31,7 @@ module.exports = {
 
         // Return user apikey
         bot.onText(/\/apikey/, function(msg, match) {
+          // TODO move to apibackend.js
           var db = logger.db
           logger.db.serialize(function() {
             db.each("SELECT api_key FROM chat WHERE name = ?", msg.chat.id, function(err, row) {

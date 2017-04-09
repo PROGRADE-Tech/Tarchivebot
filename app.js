@@ -1,6 +1,6 @@
 const bot = require('./libs/botcommands')
 const webserver = require('./libs/webserver')
-const api = require('./libs/api')
+const api = require('./libs/api/api')
 
 if(process.argv.length > 2) {
 	process.argv.forEach((val, index, array) => {
