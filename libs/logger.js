@@ -50,11 +50,10 @@ module.exports = {
         var stmt = db.prepare("INSERT OR IGNORE INTO chat (id, name, api_key, api_key_salt) VALUES (null,?,?,?)")
         stmt.run(name, apiKey, apiKeySalt)
         stmt.finalize()
-      })
-
-      // Retrieve the chat primary key the message was sent from
-      this.db.each("SELECT rowid AS id FROM chat WHERE name = ?", name, function(err, row) {
-        callback(row.id)
+        // Retrieve the chat primary key the message was sent from
+        db.each("SELECT rowid AS id FROM chat WHERE name = ?", name, function(err, row) {
+          callback(row.id)
+        })
       })
     }
   },
@@ -68,25 +67,40 @@ module.exports = {
         var stmt = db.prepare("INSERT OR IGNORE INTO user_type (id, name) VALUES (null,?)")
         stmt.run(name)
         stmt.finalize()
+        db.each("SELECT rowid AS id FROM user_type WHERE name = ?", name, function(err, row) {
+          callback(row.id)
+        })
       })
 
-      this.db.each("SELECT rowid AS id FROM user_type WHERE name = ?", name, function(err, row) {
-        callback(row.id)
-      })
     }
   },
 
-  logUser: function(name, firstName, lastName, userTypeId) {
+  logUser: function(name, firstName, lastName, userTypeId, callback) {
+    var userId = -1
+    if(name !== undefined) {
+      var db = this.db
+      this.db.serialize(function() {
+        var stmt = db.prepare("INSERT OR IGNORE INTO user (id, name, first_name, last_name, user_type_id) VALUES (null,?,?,?,?)")
+        stmt.run(name, firstName, lastName, userTypeId)
+        stmt.finalize()
+        db.each("SELECT rowid AS id FROM user WHERE name = ?", name, function(err, row) {
+          callback(row.id)
+        })
+      })
 
+    }
   },
 
   logMessage: function(msg) {
+
     this.logChat(msg.chat.id, (chatId) => {
       this.logUserType(msg.chat.type, (typeId) => {
         console.log(chatId)
         console.log(typeId)
+        this.logUser(msg.chat.username, msg.chat.first_name, msg.chat.last_name, typeId, (userId) => {
+          console.log(userId)
+        })
         // TODO Log message
-        // TODO Log user
         // TODO Log message type
       })
     })
