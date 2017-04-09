@@ -28,10 +28,14 @@ module.exports = {
           )
         })
 
-        // Return user token
-        bot.onText(/\/token/, function(msg, match) {
-          var chatId = msg.chat.id
-          // Provide SHA-256 token to for this chat (NOT the telegram token)
+        // Return user apikey
+        bot.onText(/\/apikey/, function(msg, match) {
+          var db = logger.db
+          logger.db.serialize(function() {
+            db.each("SELECT api_key FROM chat WHERE name = ?", msg.chat.id, function(err, row) {
+              bot.sendMessage(msg.chat.id, 'Your API-Key:\n`' + row.api_key + '`', { 'parse_mode': 'Markdown'})
+            })
+          })
         })
       })
     }
