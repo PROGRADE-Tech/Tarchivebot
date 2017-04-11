@@ -93,13 +93,13 @@ module.exports = {
     }
   },
 
-  logMessageData: function(data, chatId, userId, messageTypeId, callback) {
+  logMessageData: function(data, chatId, userId, messageTypeId, timestamp, callback) {
     var messageId = -1
     if(data !== undefined) {
       var db = this.db
       this.db.serialize(function() {
-        var stmt = db.prepare("INSERT INTO message (id, data, chat_id, user_id, message_type_id) VALUES (null,?,?,?,?)")
-        stmt.run(data, chatId, userId, messageTypeId)
+        var stmt = db.prepare("INSERT INTO message (id, data, chat_id, user_id, timestamp, message_type_id) VALUES (null,?,?,?,?,?)")
+        stmt.run(data, chatId, userId, timestamp, messageTypeId)
         stmt.finalize()
         db.each("SELECT last_insert_rowid() as id", function(err, row) {
           callback(row.id)
@@ -109,11 +109,12 @@ module.exports = {
   },
 
   logMessage: function(msg) {
+    console.log(msg);
     this.logChat(msg.chat.id, (chatId) => {
       this.logUserType(msg.from.id, (typeId) => {
         this.logUser(msg.from.username, msg.from.first_name, msg.from.last_name, typeId, (userId) => {
           this.logMessageType(msg.chat.type, (messageTypeId) => {
-            this.logMessageData(msg.text, chatId, userId, messageTypeId, (messageId) => {
+            this.logMessageData(msg.text, chatId, userId, messageTypeId, msg.date, (messageId) => {
               // Message at id `messageId` has been logged
             })
           })
