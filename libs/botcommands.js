@@ -5,6 +5,7 @@
 const telegramBot = require('node-telegram-bot-api')
 const jsonFile = require('jsonfile')
 const logger = require('./logger')
+const db = require('./db')
 
 module.exports = {
 
@@ -12,8 +13,6 @@ module.exports = {
     if(configFile) {
       jsonFile.readFile(configFile, function(err, obj) {
         bot = new telegramBot(obj.token, { polling: true })
-        logger.connect(obj.db_name)
-
         // Log message
         bot.onText(/.*/, function(msg, match) {
           //console.log(msg)
@@ -32,9 +31,8 @@ module.exports = {
         // Return user apikey
         bot.onText(/\/apikey/, function(msg, match) {
           // TODO move to apibackend.js
-          var db = logger.db
-          logger.db.serialize(function() {
-            db.each("SELECT api_key FROM chat WHERE name = ?", msg.chat.id, function(err, row) {
+          db.conn.serialize(function() {
+            db.conn.each("SELECT api_key FROM chat WHERE name = ?", msg.chat.id, function(err, row) {
               bot.sendMessage(msg.chat.id, 'Your API-Key:\n`' + row.api_key + '`', { 'parse_mode': 'Markdown'})
             })
           })
