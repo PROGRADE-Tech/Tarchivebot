@@ -2,8 +2,9 @@ const webserver = require('../webserver')
 
 module.exports = {
 	serve: function() {
-		webserver.app.get('/:id', function(req, res) {
-			res.end('OK ' + req.params.id)
+		webserver.app.post('/api', function(req, res) {
+			
+			res.send(req.body.key)
 		})
 	}
 }

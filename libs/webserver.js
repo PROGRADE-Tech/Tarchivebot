@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const path = require('path')
 const sassMiddleware = require('node-sass-middleware')
 const appDir = path.dirname(require.main.filename)
@@ -29,6 +30,9 @@ module.exports = {
 		this.app.get('/', function(req, res) {
 			res.render('index', { title: 'Tarchivebot', message: 'Welcome' })
 		})
+
+		// Body parser for API
+		this.app.use(bodyParser.urlencoded({ extended: false }))
 
 		var server = this.app.listen(this.app.get('port'), function() {
 			var port = server.address().port
