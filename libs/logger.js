@@ -1,4 +1,3 @@
-const sqlite3 = require('sqlite3')
 const crypto = require('crypto')
 const db = require('./db')
 
