@@ -7,7 +7,7 @@ module.exports = {
 			const key = req.body.key
 			const amount = req.body.amount
 			apiBackend.fetchLatest(key, amount, (data) => {
-				res.send(data)
+				res.send(JSON.stringify(data))
 			})
 		})
 	}
