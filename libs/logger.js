@@ -11,7 +11,7 @@ module.exports = {
       const input = str + api.salt
       api.key = crypto.createHash('sha256')
                             .update(input)
-                            .digest('base64')
+                            .digest('hex')
       return api
   },
 

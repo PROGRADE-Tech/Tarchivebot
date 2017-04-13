@@ -14,7 +14,6 @@ module.exports = {
       WHERE chat_id=(SELECT id FROM chat WHERE api_key=?) \
       ORDER BY timestamp DESC \
       LIMIT ?", key, amount, function(err, rows) {
-        console.log(err);
       rows.forEach(function(row) {
         console.log(row)
       })
