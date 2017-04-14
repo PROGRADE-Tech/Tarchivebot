@@ -20,7 +20,8 @@ A Telegram bot that logs your chat and provides you with a key to look up variou
 
 ## License
 Tarchivebot
-Copyright (C) 2017  Severin Fürbringer
+
+Copyright (C) 2017 Severin Fürbringer and [contributors](https://github.com/PROGRADE-Tech/Tarchivebot/blob/master/CONTRIBUTORS.md)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
