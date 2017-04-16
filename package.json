@@ -10,6 +10,7 @@
     "webserver": "node app.js --webserver"
   },
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.13.3",
     "jsonfile": "^2.4.0",
     "node-sass": "~4.5.2",
