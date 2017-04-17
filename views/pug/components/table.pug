@@ -1,8 +1,9 @@
 h1 table
-table(ng-table="messageTable")
+table.table-condensed(ng-table="messageTable")
   tr(ng-repeat="msg in tableData")
-    td(data-title="'Username'") {{msg.username}}
-    td(data-title="'First Name'") {{msg.firstName}}
-    td(data-title="'Last Name'") {{msg.lastName}}
-    td(data-title="'Message'") {{msg.message}}
+    td(data-title="'Username'" sortable="'user_name'")
+      a(href="https://t.me/{{msg.user_name}}" target="_blank") {{msg.user_name}}
+    td(data-title="'First Name'" sortable="'first_name'") {{msg.first_name}}
+    td(data-title="'Last Name'") {{msg.last_name}}
+    td(data-title="'Message'") {{msg.data}}
     td(data-title="'Timestamp'") {{msg.timestamp}}

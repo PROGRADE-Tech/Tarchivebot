@@ -9,13 +9,12 @@ nav.navbar.navbar-default
       a.navbar-brand(href="#") Tarchivepanel
     .collapse.navbar-collapse(id="tarchive-nav")
       ul.nav.navbar-nav
-        //- li.active
+        li
+          button.btn.btn-primary.navbar-btn(type="button" ng-click="askForKey()") Change key  
         li
           a(href="#" ng-click="content = 'table'") Table
         li
           a(href="#" ng-click="content = 'graph'") Fancy Graph
-
-
 
       ul.nav.navbar-nav.navbar-right
         li

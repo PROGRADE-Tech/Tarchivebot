@@ -6,18 +6,16 @@ var APIService = angular.module('APIService', [])
       return;
     };
 
-    this.recent = function (key, amount) {
-      // do http post
+    this.recent = function (key, amount, callback) {
 
       $http.post("/api/recent", {"key": key, "amount": amount})
        .then(
            function(response){
-             //sucess
-             console.log(response.data);
-             // ideally I could just return response.data
+             // success
+             callback(response.data);
            },
            function(response){
-             //fail
+             // fail
              console.log(response);
            }
         );
