@@ -32,7 +32,7 @@ module.exports = {
 		})
 
 		// Body parser for API
-		this.app.use(bodyParser.urlencoded({ extended: false }))
+		this.app.use(bodyParser.json())
 
 		var server = this.app.listen(this.app.get('port'), function() {
 			var port = server.address().port
