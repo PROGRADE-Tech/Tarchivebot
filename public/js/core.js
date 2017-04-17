@@ -1,10 +1,16 @@
-var tarchive = angular.module('tarchive', ["ngTable"]);
+var tarchive = angular.module('tarchive', ["APIService", "ngTable"]);
 
-tarchive.controller('CoreController', ['$scope', 'NgTableParams', function($scope, NgTableParams) {
+tarchive.controller('CoreController', ['$scope', 'API', 'NgTableParams', function($scope, API, NgTableParams) {
 
   $scope.key = localStorage.getItem('tarchiveKey');
   $scope.content = "table";
   $scope.sampleData = sampleData;
+
+  API.test("APIService Loaded");
+
+  $scope.kek = API.recent("afa9ed672b64417258a8c6a0b637da4482a5e7c2263d009988575194fc758233", 100);
+  // id like kek to be set with whatever is returned when the http call is done.
+
 
 
 
