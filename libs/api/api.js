@@ -10,5 +10,14 @@ module.exports = {
 				res.send(JSON.stringify(data))
 			})
 		})
+
+		webserver.app.post('/api/search', function(req, res) {
+			const key = req.body.key
+			const amount = req.body.amount
+			const str = req.body.str // String to be searched
+			apiBackend.searchForMessages(key, amount, str, (data) => {
+				res.send(JSON.stringify(data))
+			})
+		})
 	}
 }

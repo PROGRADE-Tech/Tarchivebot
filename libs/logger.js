@@ -96,7 +96,6 @@ module.exports = {
   },
 
   logMessage: function(msg) {
-    console.log(msg);
     this.logChat(msg.chat.id, (chatId) => {
       this.logUserType(msg.from.id, (typeId) => {
         this.logUser(msg.from.username, msg.from.first_name, msg.from.last_name, typeId, (userId) => {
