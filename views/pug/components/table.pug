@@ -1,5 +1,5 @@
 h1 table
-table.table-condensed(ng-table="messageTable")
+table.table.table-striped(ng-table="messageTable")
   tr(ng-repeat="msg in $data")
     td(data-title="'Username'" sortable="'user_name'")
       a(href="https://t.me/{{msg.user_name}}" target="_blank") {{msg.user_name}}
