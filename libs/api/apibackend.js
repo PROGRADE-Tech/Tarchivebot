@@ -46,5 +46,15 @@ module.exports = {
         })
         callback(data)
       })
+    },
+
+    validateApiKey: function(key, callback) {
+      db.conn.all("SELECT rowid FROM chat WHERE name != '' AND api_key=? LIMIT 1", key, function(err, row) {
+        var status = false;
+        if(row.length >= 1) {
+          status = true;
+        }
+        callback([{'status': status}]);
+      })
     }
 }
