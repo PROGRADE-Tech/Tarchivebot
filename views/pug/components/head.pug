@@ -5,7 +5,7 @@ head
   link(href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet")
 
   // Angular, jQuery & Bootstrap
-  script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular.js" integrity="sha256-NoWL4g6vRp92c63AHksEBusn/GJB4UQpmVRRUay3FuU=" crossorigin="anonymous")
+  script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular.min.js" integrity="sha256-ttK51X5HaD59JvacA7ax3HgzU1WdaX/IeSn1QYz/TCQ=" crossorigin="anonymous")
 
   script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous")
 
@@ -13,6 +13,8 @@ head
   script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
 
   // Angular modules
+  // ng-sanitize
+  script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular-sanitize.min.js" integrity="sha256-21J/97Sbzq48Q3zZh6MsKt5G6giQ9o3tOSBnLolavho=" crossorigin="anonymous")
   // ng-table
   link(rel="stylesheet" href="//unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css")
   script(src="//unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js")
@@ -24,9 +26,7 @@ head
 
   // JS Files
   script(src="/js/core.js")
-
-  // sample data
-  script(src="/js/sample-data.js")
+  script(src="/js/api-service.js")
 
   // Stylesheets
   link(rel='stylesheet', href='/css/main.css')
