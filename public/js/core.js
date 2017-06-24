@@ -1,6 +1,7 @@
-var tarchive = angular.module('tarchive', ["APIService", "ngTable"]);
+var tarchive = angular.module('tarchive', ["APIService", "ngTable", "ngSanitize"]);
 
 tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParams', function($scope, $filter, API, NgTableParams) {
+
 
   $scope.key = localStorage.getItem('tarchiveKey');
   $scope.messageAmount = 1000;
@@ -10,8 +11,6 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
   $scope.getRecentMessages = function() {
     API.recent($scope.key, $scope.messageAmount, function(data) {
       $scope.tableData = data;
-      console.log(data);
-      console.log($scope.tableData);
       $scope.messageTable.reload();
     });
   };

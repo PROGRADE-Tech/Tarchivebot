@@ -5,5 +5,6 @@ table.table.table-striped(ng-table="messageTable")
       a(href="https://t.me/{{msg.user_name}}" target="_blank") {{msg.user_name}}
     td(data-title="'First Name'" filter="{first_name: 'text'}" sortable="'first_name'") {{msg.first_name}}
     td(data-title="'Last Name'" filter="{last_name: 'text'}" sortable="'last_name'") {{msg.last_name}}
-    td(data-title="'Message'" filter="{data: 'text'}") {{msg.data}}
+    td(data-title="'Message'" filter="{data: 'text'}")
+      span(ng-bind-html="msg.data | linky:'_blank'")
     td(data-title="'Timestamp'" filter="{dateformatted: 'text'}" sortable="'timestamp'") {{msg.dateformatted}}
