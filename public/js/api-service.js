@@ -14,7 +14,7 @@ var APIService = angular.module('APIService', [])
            function(response){
              // success
              for (var i = 0; i < response.data.length; i++) {
-               response.data[i].timestamp = $filter('date')(response.data[i].timestamp * 1000, 'HH:mm:ss - dd/MM/yy');
+               response.data[i].dateformatted = $filter('date')(response.data[i].timestamp * 1000, 'HH:mm:ss - dd/MM/yy');
              }
              callback(response.data);
            },

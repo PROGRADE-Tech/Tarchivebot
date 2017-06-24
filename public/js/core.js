@@ -7,6 +7,16 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
   $scope.tableData = [];
   $scope.content = "table";
 
+  $scope.getRecentMessages = function() {
+    API.recent($scope.key, $scope.messageAmount, function(data) {
+      $scope.tableData = data;
+      console.log(data);
+      console.log($scope.tableData);
+      $scope.messageTable.reload();
+    });
+  };
+  $scope.getRecentMessages(),
+
   $scope.messageTable = new NgTableParams({
         page: 1,            // show first page
         count: 10           // count per page
@@ -25,6 +35,7 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
             return paged;
         }
     });
+
 
     $scope.askForKey = function() {
       swal({
@@ -63,12 +74,5 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
     if ($scope.key === null) {
       $scope.askForKey();
     }
-
-    API.recent($scope.key, $scope.messageAmount, function(data) {
-      $scope.tableData = data;
-      console.log(data);
-      console.log($scope.tableData);
-      $scope.messageTable.reload();
-    });
 
 }]);
