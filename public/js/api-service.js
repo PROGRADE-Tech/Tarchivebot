@@ -1,10 +1,11 @@
-var APIService = angular.module('APIService', [])
-.service('API', function ($http) {
+/**
+ * An Angular service to fetch data from the Tarchive API
+ */
 
-    this.test = function (a) {
-      console.log(a);
-      return;
-    };
+var APIService = angular.module('APIService', [])
+.service('API', function ($http, $filter) {
+    console.log("APIService loaded");
+
 
     this.recent = function (key, amount, callback) {
 
@@ -12,6 +13,9 @@ var APIService = angular.module('APIService', [])
        .then(
            function(response){
              // success
+             for (var i = 0; i < response.data.length; i++) {
+               response.data[i].timestamp = $filter('date')(response.data[i].timestamp * 1000, 'HH:mm:ss - dd/MM/yy');
+             }
              callback(response.data);
            },
            function(response){

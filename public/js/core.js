@@ -4,22 +4,25 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
 
   $scope.key = localStorage.getItem('tarchiveKey');
   $scope.messageAmount = 1000;
-  $scope.newData = [];
+  $scope.tableData = [];
   $scope.content = "table";
-  API.test("APIService Loaded");
 
   $scope.messageTable = new NgTableParams({
         page: 1,            // show first page
         count: 10           // count per page
     }, {
-        total: $scope.newData.length, // length of data
+        total: $scope.tableData.length, // length of data
         getData: function (params) {
+
             // use build-in angular filter
-            var orderedData = params.filter() ? $filter('filter')($scope.newData, params.filter()) : $scope.newData;
-            $scope.ordered = orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count());
+            var orderedData = params.filter() ? $filter('filter')($scope.tableData, params.filter()) : $scope.tableData;
             params.total(orderedData.length);
-            // set total for recalc pagination
-            return $scope.ordered;
+
+            var sorted = $filter('orderBy')(orderedData, params.orderBy());
+
+            var paged = sorted.slice((params.page() - 1) * params.count(), params.page() * params.count());
+
+            return paged;
         }
     });
 
@@ -62,9 +65,9 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
     }
 
     API.recent($scope.key, $scope.messageAmount, function(data) {
-      $scope.newData = data;
+      $scope.tableData = data;
       console.log(data);
-      console.log($scope.newData);
+      console.log($scope.tableData);
       $scope.messageTable.reload();
     });
 

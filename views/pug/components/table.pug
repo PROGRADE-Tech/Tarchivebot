@@ -1,9 +1,9 @@
-h1 table
+h1 View messages
 table.table.table-striped(ng-table="messageTable")
   tr(ng-repeat="msg in $data")
-    td(data-title="'Username'" sortable="'user_name'")
+    td(data-title="'Username'" filter="{user_name: 'text'}" sortable="'user_name'")
       a(href="https://t.me/{{msg.user_name}}" target="_blank") {{msg.user_name}}
-    td(data-title="'First Name'" sortable="'first_name'") {{msg.first_name}}
-    td(data-title="'Last Name'") {{msg.last_name}}
-    td(data-title="'Message'") {{msg.data}}
-    td(data-title="'Timestamp'") {{msg.timestamp}}
+    td(data-title="'First Name'" filter="{first_name: 'text'}" sortable="'first_name'") {{msg.first_name}}
+    td(data-title="'Last Name'" filter="{last_name: 'text'}" sortable="'last_name'") {{msg.last_name}}
+    td(data-title="'Message'" filter="{data: 'text'}") {{msg.data}}
+    td(data-title="'Timestamp'" filter="{timestamp: 'text'}" sortable="'timestamp'") {{msg.timestamp}}

@@ -7,7 +7,6 @@ html(ng-app="tarchive")
 		include components/navbar
 
 		.container
-			h1 {{kek}}
 			.row(ng-if="content == 'table'")
 				include components/table
 			.row(ng-if="content == 'graph'")
