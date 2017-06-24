@@ -14,7 +14,7 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
       $scope.messageTable.reload();
     });
   };
-  $scope.getRecentMessages(),
+  $scope.getRecentMessages();
 
   $scope.messageTable = new NgTableParams({
         page: 1,            // show first page
@@ -57,10 +57,7 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
         localStorage.setItem('tarchiveKey', inputValue);
         $scope.key = inputValue;
 
-        API.recent($scope.key, $scope.messageAmount, function(data) {
-          $scope.newData = data;
-          $scope.messageTable.reload();
-        });
+        $scope.getRecentMessages()
         swal({
           title: "Nice!",
           text: "This is the key you entered:<br><code style='word-wrap:break-word;'>" + inputValue + "</code>",
