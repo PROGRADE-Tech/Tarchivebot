@@ -20,7 +20,7 @@ module.exports = {
 			})
 		})
 
-		webserver.app.post('/api/validateApiKey', function(req, res) {
+		webserver.app.post('/api/validatekey', function(req, res) {
 			const key = req.body.key
 			apiBackend.validateApiKey(key, (data) => {
 				res.send(JSON.stringify(data))

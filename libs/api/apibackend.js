@@ -14,7 +14,7 @@ module.exports = {
       JOIN message_type ON message.message_type_id=message_type.id \
       WHERE chat_id=(SELECT id FROM chat WHERE api_key=?) \
       ORDER BY timestamp DESC"
-    if(amount) {
+    if(amount && !isNaN(amount)) {
       // An amount limit was specified
       const queryLimit = query + " LIMIT ?"
       db.conn.all(queryLimit, key, amount, function(err, rows) {
@@ -36,8 +36,7 @@ module.exports = {
 
   searchForMessages: function(key, amount, str, callback) {
     var data = []
-    db.conn.all(
-      "SELECT message.id, message.data, message.timestamp, \
+    const query = "SELECT message.id, message.data, message.timestamp, \
         chat.name AS chat_name, user.name AS user_name, \
         user.first_name AS first_name, user.last_name AS last_name, \
         message_type.name AS message_type \
@@ -50,13 +49,25 @@ module.exports = {
         message.data LIKE ? OR \
         message.data LIKE ? OR \
         message.data LIKE ?) \
-      ORDER BY timestamp DESC \
-      LIMIT ?", key, str, '%'+str, str+'%', '%'+str+'%', amount, function(err, rows) {
-        rows.forEach(function(row) {
-          data.push(row)
+      ORDER BY timestamp DESC"
+      // LIMIT ?"
+      if(amount && !isNaN(amount)) {
+        // An amount was specified
+        const querylimit = query + " LIMIT ?"
+        db.conn.all(query, key, str, '%'+str, str+'%', '%'+str+'%', amount, function(err, rows) {
+          rows.forEach(function(row) {
+            data.push(row)
+          })
+          callback(data)
         })
-        callback(data)
-      })
+      } else {
+        db.conn.all(query, key, str, '%'+str, str+'%', '%'+str+'%', function(err, rows) {
+          rows.forEach(function(row) {
+            data.push(row)
+          })
+          callback(data)
+        })
+      }
     },
 
     validateApiKey: function(key, callback) {
