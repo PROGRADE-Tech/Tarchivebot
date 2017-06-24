@@ -19,5 +19,12 @@ module.exports = {
 				res.send(JSON.stringify(data))
 			})
 		})
+
+		webserver.app.post('/api/validateApiKey', function(req, res) {
+			const key = req.body.key
+			apiBackend.validateApiKey(key, (data) => {
+				res.send(JSON.stringify(data))
+			})
+		})
 	}
 }
