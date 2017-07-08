@@ -10,6 +10,7 @@ RUN npm install
 
 # Bundle app source
 COPY . /usr/src/app
+COPY ./db/tarchive.db.example /usr/src/app/db/tarchive.db
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
