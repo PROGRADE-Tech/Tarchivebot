@@ -6,7 +6,6 @@ var APIService = angular.module('APIService', [])
 .service('API', function ($http, $filter) {
     console.log("APIService loaded");
 
-
     this.recent = function (key, amount, callback) {
 
       $http.post("/api/recent", {"key": key, "amount": amount})
@@ -26,5 +25,4 @@ var APIService = angular.module('APIService', [])
 
       return;
     };
-
 });

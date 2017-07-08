@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-		"postinstall": "grunt uglify",
-    "start": "grunt uglify && node app.js",
+    "postinstall": "grunt uglify",
+    "start": "grunt & node app.js",
     "bot": "node app.js --bot",
     "webserver": "node app.js --webserver"
   },
@@ -32,6 +32,8 @@
   "homepage": "https://github.com/fuerbringer/Tarchivebot#readme",
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-contrib-uglify": "^3.0.1"
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-run": "^0.7.0"
   }
 }
