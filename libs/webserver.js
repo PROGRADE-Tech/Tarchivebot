@@ -10,7 +10,7 @@ module.exports = {
 	ENGINE: 'pug',
 	app: express(),
 
-	serve: function() {
+	serve: function(config) {
 		this.app.set('port', this.PORT)
 		this.app.set('views', this.VIEWS)
 		this.app.set('view engine', this.ENGINE)
@@ -28,8 +28,9 @@ module.exports = {
 
 		this.app.get('/', function(req, res) {
 			res.render('index', {
-				title: 'Tarchivebot',
-				message: 'Welcome'
+				title: config['frontend'].title,
+				message: config['frontend'].message,
+				botUsername: config['frontend'].botUsername,
 			})
 		})
 

@@ -1,5 +1,9 @@
 {
 "token": "abcdefghi:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-"botUsername": "Tarchivebot",
-"dbName": "db/tarchive.db"
+"dbName": "db/tarchive.db",
+"frontend": {
+      "botUsername": "Tarchivebot",
+      "title": "Tarchivebot",
+      "message": "Welcome!"
+}
 }
