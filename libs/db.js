@@ -8,8 +8,8 @@ module.exports = {
     if(configFile) {
       var that = this
       jsonFile.readFile(configFile, function(err, obj) {
-        console.log(__filename + ':\tOpening SQLite3 database `' + obj.db_name + '`...')
-        that.conn = new sqlite3.Database(obj.db_name)
+        console.log(__filename + ':\tOpening SQLite3 database `' + obj.dbName + '`...')
+        that.conn = new sqlite3.Database(obj.dbName)
 
         // Perform data with database connection:
         next()

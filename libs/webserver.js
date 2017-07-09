@@ -16,19 +16,21 @@ module.exports = {
 		this.app.set('view engine', this.ENGINE)
 
 		this.app.use(sassMiddleware({
-				src: appDir + '/views/scss',
-				dest: appDir + '/public/css',
-				prefix: '/css',
-				indentedSyntax: false,
-				debug: true,
-			})
-		)
+			src: appDir + '/views/scss',
+			dest: appDir + '/public/css',
+			prefix: '/css',
+			indentedSyntax: false,
+			debug: true,
+		}))
 
 		// Serve files other than compiled pug markup:
 		this.app.use(express.static(path.join(__dirname, '../public')))
 
 		this.app.get('/', function(req, res) {
-			res.render('index', { title: 'Tarchivebot', message: 'Welcome' })
+			res.render('index', {
+				title: 'Tarchivebot',
+				message: 'Welcome'
+			})
 		})
 
 		// Body parser for API
@@ -36,7 +38,8 @@ module.exports = {
 
 		var server = this.app.listen(this.app.get('port'), function() {
 			var port = server.address().port
-			console.log(__filename + ':\tServing static files from ./public to  localhost:' + port)
+			console.log(__filename +
+				':\tServing static files from ./public to  localhost:' + port)
 		})
 	}
 }
