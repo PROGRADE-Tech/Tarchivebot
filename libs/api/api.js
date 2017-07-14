@@ -6,9 +6,14 @@ module.exports = {
 		webserver.app.post('/api/recent', function(req, res) {
 			const key = req.body.key
 			const amount = req.body.amount
-			apiBackend.fetchLatest(key, amount, (data) => {
-				res.send(JSON.stringify(data))
-			})
+
+			if(key !== null) {
+				apiBackend.fetchLatest(key, amount, (data) => {
+					res.send(JSON.stringify(data))
+				})
+			} else {
+				res.send([])
+			}
 		})
 
 		webserver.app.post('/api/search', function(req, res) {
