@@ -1,0 +1,7 @@
+tarchive:
+  build: .
+  ports:
+    - "3000:3000"
+  volumes:
+    - $PWD/config/auth.json:/usr/src/app/config/auth.json
+    - $PWD/db/tarchive.db:/usr/src/app/db/tarchive.db

@@ -1,22 +1,8 @@
 # Tarchivebot
-A Telegram bot that logs your chat and provides you with a key to look up various statistics.
+A Telegram bot that archives your chat and provides you with a key to look up old messages and various statistics. Add the bot using this link: [@Tarchivebot](https://t.me/Tarchivebot).
 
-## Setup
-1. `cp config/auth.json.example config/auth.json`
-2. `cp db/tarchive.db.example db/tarchive.db`
-3. Edit the `auth.json` file.
-4. `npm install`
-5. Install `SQLite3` on your server using your favorite package manager.
-
-## Running
-
-`npm start`
-
-### Webserver only
-`npm run webserver`
-
-### Telegram Bot only
-`npm run bot`
+## Installation
+Click [here](https://github.com/PROGRADE-Tech/Tarchivebot/blob/master/docs/Installation.md) to view an easy guide on how to run this bot yourself!
 
 ## License
 Tarchivebot
