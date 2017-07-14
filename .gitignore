@@ -4,6 +4,7 @@ tarchive.db
 
 # Authentication config for Telegram-Bot token and DB credidentials
 auth.json
+config.json
 
 # Logs
 logs
