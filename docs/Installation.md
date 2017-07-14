@@ -15,7 +15,12 @@ Now you're ready for the installation.
 
 ## Installation using Docker
 ### docker-compose
-Coming Soon(tm)
+Provided that you are in the cloned repo with the `docker-compose.yml` file and have done the above mentioned steps:
+```
+docker-compose up -d
+```
+This process will take a while. After it's done, the application should be running on `localhost:3000`. Ofcourse the port can be adjusted in the `docker-compose.yml` file.
+
 
 ### docker run
 
