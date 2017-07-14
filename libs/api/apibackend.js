@@ -5,7 +5,12 @@ module.exports = {
   fetchLatest: function(key, amount, callback) {
     var data = []
 
-    if(key) {
+    if(amount === null || isNaN(amount)) {
+        amount = 1000
+    }
+
+
+    if(key !== null) {
       const query = "SELECT message.id, message.data, message.timestamp, \
           chat.name AS chat_name, user.name AS user_name, \
           user.first_name AS first_name, user.last_name AS last_name, \
@@ -39,7 +44,13 @@ module.exports = {
 
   searchForMessages: function(key, amount, str, callback) {
     var data = []
-    if(key && str && (typeof str === 'string' || str instanceof String)) {
+
+    if(amount === null || isNaN(amount)) {
+        amount = 1000
+    }
+
+
+    if(key !== null && str && (typeof str === 'string' || str instanceof String)) {
       const query = "SELECT message.id, message.data, message.timestamp, \
           chat.name AS chat_name, user.name AS user_name, \
           user.first_name AS first_name, user.last_name AS last_name, \
@@ -75,7 +86,7 @@ module.exports = {
     },
 
     validateApiKey: function(key, callback) {
-      if(key) {
+      if(key !== null) {
         db.conn.all("SELECT rowid FROM chat WHERE name != '' AND api_key=? LIMIT 1", key, function(err, row) {
           var status = false
           if(row.length >= 1) {
