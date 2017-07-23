@@ -14,7 +14,7 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
       $scope.messageTable.reload();
     });
   };
-  $scope.getRecentMessages();
+
 
   $scope.messageTable = new NgTableParams({
         page: 1,            // show first page
@@ -69,6 +69,8 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
 
     if ($scope.key === null) {
       $scope.askForKey();
+    } else {
+      $scope.getRecentMessages();
     }
 
 }]);
