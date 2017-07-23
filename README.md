@@ -1,6 +1,8 @@
 # Tarchivebot
 A Telegram bot that archives your chat and provides you with a key to look up old messages and various statistics. Add the bot using this link: [@Tarchivebot](https://t.me/Tarchivebot).
 
+[![Build Status](https://travis-ci.org/PROGRADE-Tech/Tarchivebot.svg?branch=master)](https://travis-ci.org/PROGRADE-Tech/Tarchivebot)
+
 ## Installation
 Click [here](https://github.com/PROGRADE-Tech/Tarchivebot/blob/master/docs/Installation.md) to view an easy guide on how to run this bot yourself!
 
