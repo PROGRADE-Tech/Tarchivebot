@@ -7,9 +7,9 @@ Clone the repository: `git clone https://github.com/PROGRADE-Tech/Tarchivebot.gi
 
 Once that's done you should deploy the database and edit the config file:
 
-1. `cp config/auth.json.example config/auth.json`
+1. `cp config/config.json.example config/config.json`
 2. `cp db/tarchive.db.example db/tarchive.db`
-3. `Edit the config/auth.json file.`
+3. `Edit the config/config.json file.`
 
 Now you're ready for the installation.
 
@@ -36,11 +36,11 @@ Now your image is ready to be run:
 docker run -d \
 	--name tarchive \
 	-p 3000:3000 \
-	-v $PWD/config/auth.json:/usr/src/app/config/auth.json \
+	-v $PWD/config/config.json:/usr/src/app/config/config.json \
 	-v $PWD/db/tarchive.db:/usr/src/app/db/tarchive.db \
 	prograde-tech/tarchive
 ```
-One-liner version: `docker run -d --name tarchive -p 3000:3000 -v $PWD/config/auth.json:/usr/src/app/config/auth.json -v $PWD/db/tarchive.db:/usr/src/app/db/tarchive.db prograde-tech/tarchive`
+One-liner version: `docker run -d --name tarchive -p 3000:3000 -v $PWD/config/config.json:/usr/src/app/config/config.json -v $PWD/db/tarchive.db:/usr/src/app/db/tarchive.db prograde-tech/tarchive`
 
 Make sure the bot is running using `docker ps -a` and `docker logs tarchive`.
 
