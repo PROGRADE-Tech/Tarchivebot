@@ -1,20 +1,16 @@
 var tarchive = angular.module('tarchive', ["APIService", "ngTable", "ngSanitize"]);
 
-tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParams', function($scope, $filter, API, NgTableParams) {
+tarchive.config(['$compileProvider', function( $compileProvider ) {
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|http|ftp|mailto|data|chrome-extension):/);
+  }
+]);
 
+tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParams', function($scope, $filter, API, NgTableParams) {
 
   $scope.key = localStorage.getItem('tarchiveKey');
   $scope.messageAmount = 1000;
   $scope.tableData = [];
   $scope.content = "table";
-
-  $scope.getRecentMessages = function() {
-    API.recent($scope.key, $scope.messageAmount, function(data) {
-      $scope.tableData = data;
-      $scope.messageTable.reload();
-    });
-  };
-
 
   $scope.messageTable = new NgTableParams({
         page: 1,            // show first page
@@ -35,6 +31,13 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
         }
     });
 
+    $scope.getRecentMessages = function() {
+      API.recent($scope.key, $scope.messageAmount, function(data) {
+        $scope.tableData = data;
+        $scope.setJsonExportData();
+        $scope.messageTable.reload();
+      });
+    };
 
     $scope.askForKey = function() {
       swal({
@@ -66,6 +69,19 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
         });
       });
     };
+
+    $scope.setJsonExportData = function() {
+      var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify($scope.tableData));
+      $scope.jsonData = dataStr;
+      $scope.jsonDataFile = Date.now() + "_tarchive_table.json";
+    };
+
+    $scope.downloadJsonExportData = function() {
+      if($scope.tableData.length <= 0) {
+        $scope.setJsonExportData();
+      }
+      window.location.href = $("#jsonDataExportTable").attr('href');
+    }
 
     if ($scope.key === null) {
       $scope.askForKey();
