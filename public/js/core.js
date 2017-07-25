@@ -1,7 +1,7 @@
 var tarchive = angular.module('tarchive', ["APIService", "ngTable", "ngSanitize"]);
 
 tarchive.config(['$compileProvider', function( $compileProvider ) {
-    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|http|ftp|mailto|data|chrome-extension):/);
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|http|data):/);
   }
 ]);
 
