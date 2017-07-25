@@ -34,8 +34,8 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
     $scope.getRecentMessages = function() {
       API.recent($scope.key, $scope.messageAmount, function(data) {
         $scope.tableData = data;
-        $scope.setJsonExportData();
         $scope.messageTable.reload();
+        $scope.setJsonExportData();
       });
     };
 
@@ -57,10 +57,13 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
           return false
         }
 
+        // TODO validate key
+
         localStorage.setItem('tarchiveKey', inputValue);
         $scope.key = inputValue;
 
-        $scope.getRecentMessages()
+        $scope.getRecentMessages();
+
         swal({
           title: "Nice!",
           text: "This is the key you entered:<br><code style='word-wrap:break-word;'>" + inputValue + "</code>",
@@ -74,17 +77,17 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
       var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify($scope.tableData));
       $scope.jsonData = dataStr;
       $scope.jsonDataFile = Date.now() + "_tarchive_table.json";
-    };
 
-    $scope.downloadJsonExportData = function() {
-      if($scope.tableData.length <= 0) {
-        $scope.setJsonExportData();
+      if($scope.tableData && $scope.tableData.length) {
+        $scope.exportButtonClass = "btn-export";
+      } else {
+        $scope.exportButtonClass = "invisible";
       }
-      window.location.href = $("#jsonDataExportTable").attr('href');
-    }
+    };
 
     if ($scope.key === null) {
       $scope.askForKey();
+      $scope.exportButtonClass = "invisible";
     } else {
       $scope.getRecentMessages();
     }

@@ -8,5 +8,4 @@ table.table.table-striped(ng-table="messageTable")
     td(data-title="'Message'" filter="{data: 'text'}")
       span(ng-bind-html="msg.data | linky:'_blank'")
     td(data-title="'Timestamp'" filter="{dateformatted: 'text'}" sortable="'timestamp'") {{msg.dateformatted}}
-button(ng-click="downloadJsonExportData()" class="btn btn-default" title="Download the current table view in the JSON file format.") Export as JSON
-  a(href="{{jsonData}}" download="{{jsonDataFile}}" id="jsonDataExportTable" target="_blank")
+a(href="{{jsonData}}" download="{{jsonDataFile}}" target="_blank" class="btn btn-default {{exportButtonClass}}" title="Download the current table view in the JSON file format.") Export as JSON
