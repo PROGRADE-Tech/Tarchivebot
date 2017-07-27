@@ -3,10 +3,13 @@
 	p View and sort through all the messages Tarchivebot has archived so far!
 
 .row.page-block
-	.col-xs-12.col-md-8
-		input.form-control(type="text", ng-model="tableSearch.message", placeholder="Search for messages here") 
-	.col-xs-12.col-md-4
-		button.form-control(ng-click="getMessagesByString()") Search
+	form(ng-submit="getMessagesByString()")
+		.col-xs-12.col-sm-8
+			input.form-control(type="text", ng-model="tableSearch.message", placeholder="Search for messages here") 
+		.col-xs-12.col-sm-2
+			button.form-control(type="submit") Search
+		.col-xs-12.col-sm-2
+			button.form-control(type="reset", ng-click="resetMessages()") Reset
 
 .row.page-block: .col-sm-12
 table.table.table-striped(ng-table="messageTable")

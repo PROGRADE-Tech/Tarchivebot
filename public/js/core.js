@@ -8,7 +8,7 @@ tarchive.config(['$compileProvider', function( $compileProvider ) {
 tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParams', function($scope, $filter, API, NgTableParams) {
 
 	$scope.key = localStorage.getItem('tarchiveKey');
-	$scope.messageAmount = 1000;
+	$scope.messageAmount = 1000; // TODO make this variable by dropdown
 	$scope.tableData = [];
 	$scope.content = "table";
 	$scope.tableSearch = {};
@@ -43,12 +43,18 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
 
 	$scope.getMessagesByString = function() {
 		var str = $scope.tableSearch.message;
+		if(str) {
+			API.search($scope.key, $scope.messageAmount, str, function(data) {
+				$scope.tableData = data;
+				$scope.messageTable.reload();
+				$scope.setJsonExportData();
+			});
+		}
+	};
 
-		API.search($scope.key, $scope.messageAmount, str, function(data) {
-			$scope.tableData = data;
-			$scope.messageTable.reload();
-			$scope.setJsonExportData();
-		});
+	$scope.resetMessages = function() {
+		$scope.tableSearch.message = null;
+		$scope.getRecentMessages();
 	};
 
 	$scope.askForKey = function() {
