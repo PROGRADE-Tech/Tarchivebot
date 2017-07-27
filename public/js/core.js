@@ -11,6 +11,7 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
 	$scope.messageAmount = 1000;
 	$scope.tableData = [];
 	$scope.content = "table";
+	$scope.tableSearch = {};
 
 	$scope.messageTable = new NgTableParams({
 		page: 1,            // show first page
@@ -39,6 +40,16 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
 		});
 	};
 
+
+	$scope.getMessagesByString = function() {
+		var str = $scope.tableSearch.message;
+
+		API.search($scope.key, $scope.messageAmount, str, function(data) {
+			$scope.tableData = data;
+			$scope.messageTable.reload();
+			$scope.setJsonExportData();
+		});
+	};
 
 	$scope.askForKey = function() {
 		swal({
