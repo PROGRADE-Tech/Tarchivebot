@@ -101,9 +101,9 @@ module.exports = {
         if (row.length >= 1) {
           status = true
         }
-        callback([{
+        callback({
           'status': status
-        }])
+        })
       })
     } else {
       callback([])
