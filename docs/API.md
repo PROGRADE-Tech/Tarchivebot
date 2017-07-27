@@ -12,7 +12,7 @@ curl -d '{"key":"your_key_here","amount":2}' -H 'Content-Type: application/json'
 #### /api/search
 Do a full database search for a string and return the relevant messages (`amount` can be ommited):
 ```
-curl -d '{"key":"your_key_here","amount":2}' -H 'Content-Type: application/json' http://localhost:3000/api/search
+curl -d '{"key":"your_key_here","amount":2, "str":"search_term_here"}' -H 'Content-Type: application/json' http://localhost:3000/api/search
 ```
 
 #### /api/validatekey
