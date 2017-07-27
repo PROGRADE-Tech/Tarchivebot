@@ -7,7 +7,6 @@ var APIService = angular.module('APIService', [])
     console.log("APIService loaded");
 
     this.recent = function (key, amount, callback) {
-
       $http.post("/api/recent", {"key": key, "amount": amount})
        .then(
            function(response){
@@ -25,4 +24,19 @@ var APIService = angular.module('APIService', [])
 
       return;
     };
+
+		this.validateKey = function(key, callback) {
+      $http.post("/api/validatekey", {"key": key})
+       .then(
+           function(response){
+             // success
+             callback(response.data);
+           },
+           function(response){
+             console.log(response);
+           }
+        );
+
+      return;
+		}
 });

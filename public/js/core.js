@@ -39,6 +39,7 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
       });
     };
 
+
     $scope.askForKey = function() {
       swal({
         title: "Enter your key!",
@@ -57,19 +58,24 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
           return false
         }
 
-        // TODO validate key
+				API.validateKey(inputValue, function(data) {
+					if(data.status === true) {
+						localStorage.setItem('tarchiveKey', inputValue);
+						$scope.key = inputValue;
 
-        localStorage.setItem('tarchiveKey', inputValue);
-        $scope.key = inputValue;
+						$scope.getRecentMessages();
 
-        $scope.getRecentMessages();
-
-        swal({
-          title: "Nice!",
-          text: "This is the key you entered:<br><code style='word-wrap:break-word;'>" + inputValue + "</code>",
-          type: "success",
-          html: true
-        });
+						swal({
+							title: "Nice!",
+							text: "This is the key you entered:<br><code style='word-wrap:break-word;'>" + inputValue + "</code>",
+							type: "success",
+							html: true
+						});
+					} else {
+          	swal.showInputError("Oops! That doesn't appear to be a valid key.");
+          	return false
+					}
+				});
       });
     };
 
