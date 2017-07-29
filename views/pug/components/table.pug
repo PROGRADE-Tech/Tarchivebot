@@ -1,11 +1,24 @@
-h1 View messages
+.row.page-block: .col-sm-12
+	h1 Message archive
+	p View and sort through all the messages Tarchivebot has archived so far!
+
+.row.page-block
+	form(ng-submit="getMessagesByString()")
+		.col-xs-12.col-sm-8
+			input.form-control(type="text", ng-model="tableSearch.message", placeholder="Search for messages here") 
+		.col-xs-12.col-sm-2
+			button.form-control(type="submit") Search
+		.col-xs-12.col-sm-2
+			button.form-control(type="reset", ng-click="resetMessages()") Reset
+
+.row.page-block: .col-sm-12
 table.table.table-striped(ng-table="messageTable")
-  tr(ng-repeat="msg in $data")
-    td(data-title="'Username'" filter="{user_name: 'text'}" sortable="'user_name'")
-      a(href="https://t.me/{{msg.user_name}}" target="_blank") {{msg.user_name}}
-    td(data-title="'First Name'" filter="{first_name: 'text'}" sortable="'first_name'") {{msg.first_name}}
-    td(data-title="'Last Name'" filter="{last_name: 'text'}" sortable="'last_name'") {{msg.last_name}}
-    td(data-title="'Message'" filter="{data: 'text'}")
-      span(ng-bind-html="msg.data | linky:'_blank'")
-    td(data-title="'Timestamp'" filter="{dateformatted: 'text'}" sortable="'timestamp'") {{msg.dateformatted}}
+	tr(ng-repeat="msg in $data")
+		td(data-title="'Username'" filter="{user_name: 'text'}" sortable="'user_name'")
+			a(href="https://t.me/{{msg.user_name}}" target="_blank") {{msg.user_name}}
+		td(data-title="'First Name'" filter="{first_name: 'text'}" sortable="'first_name'") {{msg.first_name}}
+		td(data-title="'Last Name'" filter="{last_name: 'text'}" sortable="'last_name'") {{msg.last_name}}
+		td(data-title="'Message'" filter="{data: 'text'}")
+			span(ng-bind-html="msg.data | linky:'_blank'")
+				td(data-title="'Timestamp'" filter="{dateformatted: 'text'}" sortable="'timestamp'") {{msg.dateformatted}}
 a(href="{{jsonData}}" download="{{jsonDataFile}}" target="_blank" class="btn btn-default {{exportButtonClass}}" title="Download the current table view in the JSON file format.") Export as JSON

@@ -25,6 +25,25 @@ var APIService = angular.module('APIService', [])
 			return;
 		};
 
+		this.search = function (key, amount, str, callback) {
+			$http.post("/api/search", {"key": key, "amount": amount, "str": str})
+				.then(
+					function(response){
+						// success
+						for (var i = 0; i < response.data.length; i++) {
+							response.data[i].dateformatted = $filter('date')(response.data[i].timestamp * 1000, 'HH:mm:ss - dd/MM/yy');
+						}
+						callback(response.data);
+					},
+					function(response){
+						// fail
+						console.log(response);
+					}
+				);
+
+			return;
+		};
+
 		this.validateKey = function(key, callback) {
 			$http.post("/api/validatekey", {"key": key})
 				.then(
