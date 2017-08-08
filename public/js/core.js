@@ -59,7 +59,7 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
 
 	$scope.askForKey = function() {
 		swal({
-			title: "Enter your key!",
+			title: "Welcome to Tarchivepannel!",
 			text: "Enter the key provided by the bot:",
 			type: "input",
 			showCancelButton: true,
