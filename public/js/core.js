@@ -59,7 +59,7 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
 
 	$scope.askForKey = function() {
 		swal({
-			 html:true,
+			html: true,
 			title:	'Welcome to Tarchivepanel!',
 			text:		'What is Tarchivebot? <br><br> A Telegram bot that archives your chat and provides you with a web interface to look up messages and statistics. <br><br> Add the bot using this link:' +
 							'<a href="https://t.me/Tarchivebot"> Tarchivebot</a><br>' +
