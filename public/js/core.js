@@ -59,8 +59,13 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
 
 	$scope.askForKey = function() {
 		swal({
-			title: "Welcome to Tarchivepannel!",
-			text: "Enter the key provided by the bot:",
+			 html:true,
+			title:	'Welcome to Tarchivepanel!',
+			text:		'What is Tarchivebot? <br><br> A Telegram bot that archives your chat and provides you with a web interface to look up messages and statistics. <br><br> Add the bot using this link:' +
+							'<a href="https://t.me/Tarchivebot"> Tarchivebot</a><br>' +
+							'The bot requires read access to messages! <br><br>' +
+							'To retrieve your key simply type /apikey into chat<br><br>' +
+							'Enter the key provided by the bot in Telegram below:',
 			type: "input",
 			showCancelButton: true,
 			closeOnConfirm: false,
