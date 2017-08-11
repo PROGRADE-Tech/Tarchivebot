@@ -1,7 +1,7 @@
 # Authors and contributors
 ## Maintainers
-- Severin Fürbringer (@fuerbringer)
 - Austin Albrecht (@Hoi15A)
+- Severin Fürbringer (@fuerbringer)
 
 ## Contributors
 - Gianluca Scarciolla (@GianlucaScarciolla)
