@@ -4,7 +4,7 @@
   "description": "A Telegram bot that logs your chat and provides you with a key to look up statistics",
   "main": "app.js",
   "scripts": {
-		"test": "exit 0",
+		"test": "standard",
     "postinstall": "grunt uglify",
     "start": "grunt & node app.js",
     "bot": "node app.js --bot",
