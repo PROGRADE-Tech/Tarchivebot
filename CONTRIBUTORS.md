@@ -5,3 +5,4 @@
 
 ## Contributors
 - Gianluca Scarciolla (@GianlucaScarciolla)
+- Stefan Holzer (@holzit)
