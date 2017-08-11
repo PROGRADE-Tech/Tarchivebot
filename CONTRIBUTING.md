@@ -1,6 +1,6 @@
 # Contributing
 
-Contributions of any kind are most welcome! Just open an [issue](https://github.com/PROGRADE-Tech/Tarchivebot/issues/new) or send a [pull request](https://github.com/PROGRADE-Tech/Tarchivebot/compare). All code contributions will be licensed under the GNU AGPL-3.0.
+Contributions of any kind are most welcome! Just open an [issue](https://github.com/PROGRADE-Tech/Tarchivebot/issues/new) or send a [pull request](https://github.com/PROGRADE-Tech/Tarchivebot/compare). All code contributions will be licensed under the [GNU AGPL-3.0](https://github.com/PROGRADE-Tech/Tarchivebot/blob/master/LICENSE).
 
 ## Pull requests
 
