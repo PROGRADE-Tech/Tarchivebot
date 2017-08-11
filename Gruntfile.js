@@ -1,15 +1,15 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   grunt.initConfig({
-		watch: {
+    watch: {
       dev: {
         files: ['public/js/*.js'],
         task: ['uglify'],
-				options: {
-					nospawn: 'true',
-					interrupt: 'true',
-				}
-  		},
-		},
+        options: {
+          nospawn: 'true',
+          interrupt: 'true'
+        }
+      }
+    },
     uglify: {
       static_js: {
         files: {
@@ -21,12 +21,12 @@ module.exports = function(grunt) {
       },
       options: {
         // Play nice with Angular:
-        mangle: false,
+        mangle: false
       }
     }
   })
 
-	grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.registerTask('default', ['uglify', 'watch'])
 }
