@@ -10,6 +10,13 @@
     "bot": "node app.js --bot",
     "webserver": "node app.js --webserver"
   },
+  "standard": {
+    "globals": [
+      "angular",
+      "swal",
+      "localStorage"
+    ]
+  },
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.13.3",
