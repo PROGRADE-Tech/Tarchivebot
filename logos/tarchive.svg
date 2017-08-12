@@ -17,9 +17,9 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="tarchive.svg"
-   inkscape:export-filename="/tmp/t1.png"
-   inkscape:export-xdpi="196.5"
-   inkscape:export-ydpi="196.5">
+   inkscape:export-filename="/home/sev/git/Tarchivebot/logos/tarchive.svg.png"
+   inkscape:export-xdpi="788.16998"
+   inkscape:export-ydpi="788.16998">
   <defs
      id="defs4">
     <linearGradient
@@ -52,11 +52,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4"
-     inkscape:cx="68.185761"
-     inkscape:cy="39.049237"
+     inkscape:zoom="11.313708"
+     inkscape:cx="49.73529"
+     inkscape:cy="44.353935"
      inkscape:document-units="px"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="g4410"
      showgrid="false"
      inkscape:window-width="1916"
      inkscape:window-height="1036"
@@ -73,6 +73,13 @@
        position="148.13882,59.750504"
        orientation="1,0"
        id="guide3347" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid4404" />
+    <sodipodi:guide
+       position="24.63671,8.7304659"
+       orientation="0,1"
+       id="guide4408" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -119,38 +126,48 @@
           <g
              id="g4557"
              transform="translate(0.87748337,-0.06836276)">
-            <text
-               xml:space="preserve"
-               style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32.90566635px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-               x="10.583776"
-               y="1042.1086"
-               id="text3336"
-               sodipodi:linespacing="125%"
-               inkscape:transform-center-y="6.1871843"><tspan
-                 sodipodi:role="line"
-                 id="tspan3338"
-                 x="10.583776"
+            <g
+               id="g4415"
+               transform="translate(0.53332015,0)">
+              <text
+                 sodipodi:linespacing="125%"
+                 id="text3340"
                  y="1042.1086"
-                 style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32.90566635px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1">T</tspan></text>
-            <text
-               xml:space="preserve"
-               style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.32453156px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.93999999;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-               x="22.984289"
-               y="1042.1086"
-               id="text3340"
-               sodipodi:linespacing="125%"><tspan
-                 sodipodi:role="line"
-                 id="tspan3342"
                  x="22.984289"
-                 y="1042.1086"
-                 style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.32453156px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1">archive</tspan></text>
-            <rect
-               id="rect3345"
-               width="77.272339"
-               height="0.83867043"
-               x="28.257544"
-               y="1020.3753"
-               style="fill:#ffffff;fill-opacity:1" />
+                 style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.32453156px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.93999999;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                 xml:space="preserve"><tspan
+                   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.32453156px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1"
+                   y="1042.1086"
+                   x="22.984289"
+                   id="tspan3342"
+                   sodipodi:role="line">archive</tspan></text>
+              <g
+                 transform="matrix(1.0112908,0,0,1.0112908,-1.1915139,-11.521005)"
+                 id="g4410">
+                <text
+                   xml:space="preserve"
+                   style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32.90566635px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                   x="10.583776"
+                   y="1042.1086"
+                   id="text3336"
+                   sodipodi:linespacing="125%"
+                   inkscape:transform-center-y="6.1871843"><tspan
+                     sodipodi:role="line"
+                     id="tspan3338"
+                     x="10.583776"
+                     y="1042.1086"
+                     style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32.90566635px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1">T</tspan></text>
+                <rect
+                   id="rect3345"
+                   width="94.451546"
+                   height="0.82599998"
+                   x="11.078137"
+                   y="1020.3893"
+                   style="fill:#ffffff;fill-opacity:1"
+                   inkscape:export-xdpi="788.16998"
+                   inkscape:export-ydpi="788.16998" />
+              </g>
+            </g>
           </g>
         </g>
       </g>
