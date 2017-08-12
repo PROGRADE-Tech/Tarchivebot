@@ -16,7 +16,7 @@ You can use whatever tool you feel most comfortable with to develop your feature
 
 ## Style guidelines
 
-We don't yet enforce any particular coding style. However we will probably look into following [Javascript Standard Style](https://github.com/feross/standard/blob/master/RULES.md) in the future. You can use that standard as a general guideline for your code.
+We currently use [Javascript Standard Style](https://github.com/feross/standard/blob/master/RULES.md). Please follow this guideline if you wish to contribute.
 
 ## Difficulties
 
