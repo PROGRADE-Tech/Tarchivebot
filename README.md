@@ -1,6 +1,8 @@
 # Tarchivebot
 
+[![Telegram](https://img.shields.io/badge/Telegram-%40Tarchivebot-blue.svg?logo=data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABEAAAAOCAYAAADJ7fe0AAAABmJLR0QA/wD/AP%2BgvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QgLFTIm0y0eUAAAAk1JREFUKM%2BFU0trFEEQ/qp39pGdTbLmsYFNRMFHBDHEi6AePETB/AG9CBEPgj/Bg3jxF%2BQm3hUEwYuieJFA9CSBiIQIIYZk83Az%2B8jOTM90T3d5WDcmq8QqGrq66qv6uqsa%2BI8s/QwP2bVQZ0Jle71Q31XafGxFyRYdlWA3UBhyMwCAltSjILqSFmJKEO4QwQUABr443cBGqFHMpwEAQ24GXqhu5tOpWwK4BOA8M8PzYxxzMxBEkNpu7oMXt4P9veerXD3QD6UylVgbHWtjVWK4GSj%2Bulbjhh9zrA3H2iShMo8cAHi1tEunitnBzWZ8oT/nzDB4xqH2TZmBxFrsNCRqrQhnykX0ZFJgBhjQcWIWyAvVVJrEDUGYFoQJHHolQt2PsF0PkXYETpb6kE4R7J%2BAYLupJskL1HLOEWfRzgwAEIIQqQQVL4AvFfrdLEYHC3AE7ccAgLVc7cunS2J11z8ntbkaJeYtg40Fo7on8b3SQEsq9LlZHB8uQAjAgg%2BpJf7U5ntAmNlZXKvPtmT8ICUIA709KA%2B4sMz/HIHY8P1SIfNMdA6aUoOIkkYQzQoixDqp9WRTe0wAM8N2LQaw3oje/MXk8/IOEmsHUkQfar7M%2BTJeGR8bvHhipH%2Bsm4Vhrg672RIAiIOOy%2BMj8GNuCkFzxhjEOpELK1tPtMVty6gxt1vODFiLdx2c6K4wPVk2ljGvEvMNwPN71yeejhQyL0NtriXM8/Z3F5Wxr4/8dO8X1osv5pZOd%2BwftfY0r1SD/EZDPt7ci1Y3mrLc8f8CMxFKKFmjT3wAAAAASUVORK5CYII%3D)](https://t.me/Tarchivebot)
 [![Build Status](https://travis-ci.org/PROGRADE-Tech/Tarchivebot.svg?branch=master)](https://travis-ci.org/PROGRADE-Tech/Tarchivebot)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## What is Tarchivebot?
 A Telegram bot that archives your chat and provides you with a web interface to look up messages and statistics.
