@@ -1,0 +1,3 @@
+Tarchivebot Logo (C) Severin Fürbringer
+Distributed under the terms of the Creative Commons Attribution License
+version 3.0 (CC-BY 3.0) <https://creativecommons.org/licenses/by/3.0/legalcode>.
