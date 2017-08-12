@@ -1,3 +1,5 @@
+![Tarchive Logo](https://github.com/PROGRADE-Tech/Tarchivebot/raw/master/logos/tarchive.svg.png)
+
 # Tarchivebot
 
 [![Build Status](https://travis-ci.org/PROGRADE-Tech/Tarchivebot.svg?branch=master)](https://travis-ci.org/PROGRADE-Tech/Tarchivebot)
@@ -6,6 +8,9 @@
 A Telegram bot that archives your chat and provides you with a web interface to look up messages and statistics.
 
 Add the bot using this link: [@Tarchivebot](https://t.me/Tarchivebot). The bot requires read access to messages.
+
+We host the panel on [tarchive.prograde.ch](https://tarchive.prograde.ch).
+
 ### Screenshot
 ![Tarchive panel screenshot](https://github.com/PROGRADE-Tech/Tarchivebot/raw/master/screenshot.png)
 
