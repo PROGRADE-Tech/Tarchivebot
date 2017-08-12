@@ -8,3 +8,8 @@ before_install:
 
 notifications:
   webhooks: https://travis.ayylmao.ch/webhook
+  on_success: always # default: always
+  on_failure: always # default: always
+  on_start: always   # default: never
+  on_cancel: always # default: always
+  on_error: always # default: always
