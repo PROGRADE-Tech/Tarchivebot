@@ -2,6 +2,7 @@
 *.css
 *.swp
 tarchive.db
+tarchive.db-journal
 
 # Authentication config for Telegram-Bot token and DB credidentials
 auth.json

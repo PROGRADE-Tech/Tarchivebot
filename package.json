@@ -14,7 +14,8 @@
     "globals": [
       "angular",
       "swal",
-      "localStorage"
+      "localStorage",
+      "bot"
     ]
   },
   "dependencies": {

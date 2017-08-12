@@ -1,8 +1,8 @@
-const db = require('../db');
+const db = require('../db')
 
 module.exports = {
 
-  fetchLatest: function(key, amount, callback) {
+  fetchLatest: function (key, amount, callback) {
     var data = []
 
     if (amount === null || isNaN(amount)) {
@@ -24,16 +24,22 @@ module.exports = {
       if (amount && !isNaN(amount)) {
         // An amount limit was specified
         const queryLimit = query + ' LIMIT ?'
-        db.conn.all(queryLimit, key, amount, function(err, rows) {
-          rows.forEach(function(row) {
+        db.conn.all(queryLimit, key, amount, function (err, rows) {
+          if (err) {
+            console.log(err)
+          }
+          rows.forEach(function (row) {
             data.push(row)
           })
           callback(data)
         })
       } else {
         // Return all the messeges we've got
-        db.conn.all(query, key, function(err, rows) {
-          rows.forEach(function(row) {
+        db.conn.all(query, key, function (err, rows) {
+          if (err) {
+            console.log(err)
+          }
+          rows.forEach(function (row) {
             data.push(row)
           })
           callback(data)
@@ -42,7 +48,7 @@ module.exports = {
     }
   },
 
-  searchForMessages: function(key, amount, str, callback) {
+  searchForMessages: function (key, amount, str, callback) {
     var data = []
 
     if (amount === null || isNaN(amount)) {
@@ -68,16 +74,22 @@ module.exports = {
         const queryLimit = query + ' LIMIT ?'
         db.conn.all(queryLimit, key, str, '%' + str, str + '%', '%' + str +
           '%', amount,
-          function(err, rows) {
-            rows.forEach(function(row) {
+          function (err, rows) {
+            if (err) {
+              console.log(err)
+            }
+            rows.forEach(function (row) {
               data.push(row)
             })
             callback(data)
           })
       } else {
         db.conn.all(query, key, str, '%' + str, str + '%', '%' + str + '%',
-          function(err, rows) {
-            rows.forEach(function(row) {
+          function (err, rows) {
+            if (err) {
+              console.log(err)
+            }
+            rows.forEach(function (row) {
               data.push(row)
             })
             callback(data)
@@ -88,7 +100,7 @@ module.exports = {
     }
   },
 
-  validateApiKey: function(key, callback) {
+  validateApiKey: function (key, callback) {
     if (key !== null) {
       const query =
         `SELECT rowid
@@ -96,16 +108,21 @@ module.exports = {
         WHERE name != '' AND api_key=?
         LIMIT 1`
 
-      db.conn.all(query, key, function(err, row) {
+      db.conn.all(query, key, function (err, row) {
+        if (err) {
+          console.log(err)
+        }
         var status = false
         if (row.length >= 1) {
           status = true
         }
+        // eslint-disable-next-line
         callback({
           'status': status
         })
       })
     } else {
+      // eslint-disable-next-line
       callback([])
     }
   }
