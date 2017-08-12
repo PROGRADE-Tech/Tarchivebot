@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="33mm"
+   height="12mm"
+   viewBox="0 0 116.92909 42.51967"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="tarchive_transparent.svg"
+   inkscape:export-filename="/tmp/tarchive_transparent.svg.png"
+   inkscape:export-xdpi="856.19"
+   inkscape:export-ydpi="856.19">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="15.675757"
+     inkscape:cy="43.583716"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1916"
+     inkscape:window-height="1036"
+     inkscape:window-x="0"
+     inkscape:window-y="20"
+     inkscape:window-maximized="0"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     borderlayer="false"
+     inkscape:showpageshadow="false"
+     showborder="true"
+     inkscape:snap-text-baseline="true">
+    <sodipodi:guide
+       position="148.13882,59.750504"
+       orientation="1,0"
+       id="guide3347" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="bg"
+     transform="translate(0,-7.0866116)" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1009.8421)">
+    <g
+       id="g4153"
+       transform="matrix(1.139621,0,0,1.139621,-7.5880103,-140.85632)">
+      <g
+         id="g4160"
+         transform="translate(-1.2695479,-0.5939411)">
+        <g
+           id="g4167"
+           transform="translate(0.04855065,-2.335846)">
+          <g
+             id="g4557"
+             transform="translate(0.87748337,-0.06836276)">
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32.90566635px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               x="10.583776"
+               y="1042.1086"
+               id="text3336"
+               sodipodi:linespacing="125%"
+               inkscape:transform-center-y="6.1871843"><tspan
+                 sodipodi:role="line"
+                 id="tspan3338"
+                 x="10.583776"
+                 y="1042.1086"
+                 style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:32.90566635px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1">T</tspan></text>
+            <text
+               xml:space="preserve"
+               style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.32453156px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.93999999;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               x="22.984289"
+               y="1042.1086"
+               id="text3340"
+               sodipodi:linespacing="125%"><tspan
+                 sodipodi:role="line"
+                 id="tspan3342"
+                 x="22.984289"
+                 y="1042.1086"
+                 style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:26.32453156px;line-height:125%;font-family:'Work Sans';-inkscape-font-specification:'Work Sans, Light';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1">archive</tspan></text>
+            <rect
+               id="rect3345"
+               width="77.272339"
+               height="0.83867043"
+               x="28.257544"
+               y="1020.3753"
+               style="fill:#ffffff;fill-opacity:1" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
