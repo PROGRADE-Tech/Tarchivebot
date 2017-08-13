@@ -4,7 +4,7 @@
   "description": "A Telegram bot that logs your chat and provides you with a key to look up statistics",
   "main": "app.js",
   "scripts": {
-		"test": "standard",
+    "test": "standard",
     "postinstall": "grunt uglify",
     "start": "grunt & node app.js",
     "bot": "node app.js --bot",
@@ -19,14 +19,20 @@
     ]
   },
   "dependencies": {
+    "angular": "~1.6.5",
+    "angular-sanitize": "~1.6.5",
     "body-parser": "^1.17.1",
+    "bootstrap": "~3.3.7",
     "express": "^4.13.3",
+    "jquery": "~3.2.1",
     "jsonfile": "^2.4.0",
+    "ng-table": "~3.0.1",
     "node-sass": "~4.5.2",
     "node-sass-middleware": "^0.11.0",
     "node-telegram-bot-api": "^0.27.0",
     "pug": "^2.0.0-alpha6",
-    "sqlite3": "^3.1.8"
+    "sqlite3": "^3.1.8",
+    "sweetalert": "~1.1.3"
   },
   "repository": {
     "type": "git",
