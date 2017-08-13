@@ -34,6 +34,7 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
     API.recent($scope.key, $scope.messageAmount, function (data) {
       $scope.tableData = data
       $scope.messageTable.reload()
+      $scope.setMessageCount()
       $scope.setJsonExportData()
     })
   }
@@ -44,6 +45,7 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
       API.search($scope.key, $scope.messageAmount, str, function (data) {
         $scope.tableData = data
         $scope.messageTable.reload()
+        $scope.setMessageCount()
         $scope.setJsonExportData()
       })
     }
@@ -96,6 +98,14 @@ tarchive.controller('CoreController', ['$scope', '$filter', 'API', 'NgTableParam
         }
       })
     })
+  }
+
+  $scope.setMessageCount = function () {
+    if ($scope.tableData && $scope.tableData.length) {
+      $scope.messageCount = $scope.tableData.length
+    } else {
+      $scope.messageCount = 0
+    }
   }
 
   $scope.setJsonExportData = function () {

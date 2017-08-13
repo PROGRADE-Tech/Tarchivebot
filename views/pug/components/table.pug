@@ -1,6 +1,7 @@
 .row.page-block: .col-sm-12
 	h1 Message archive
 	p View and sort through all the messages Tarchivebot has archived so far!
+		span(class="pull-right") Displaying {{messageCount}} messages.
 
 .row.page-block
 	form(ng-submit="getMessagesByString()")
@@ -21,4 +22,6 @@ table.table.table-striped(ng-table="messageTable")
 		td(data-title="'Message'" filter="{data: 'text'}")
 			span(ng-bind-html="msg.data | linky:'_blank'")
 				td(data-title="'Timestamp'" filter="{dateformatted: 'text'}" sortable="'timestamp'") {{msg.dateformatted}}
-a(href="{{jsonData}}" download="{{jsonDataFile}}" target="_blank" class="btn btn-default {{exportButtonClass}}" title="Download the current table view in the JSON file format.") Export as JSON
+.row
+	.col-xs-12
+		a(href="{{jsonData}}" download="{{jsonDataFile}}" target="_blank" class="btn btn-default {{exportButtonClass}}" title="Download the current table view in the JSON file format.") Export as JSON
