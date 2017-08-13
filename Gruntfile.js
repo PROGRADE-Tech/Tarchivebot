@@ -29,10 +29,27 @@ module.exports = function (grunt) {
         // Play nice with Angular:
         mangle: false
       }
+    },
+    cssmin: {
+      options: {
+        mergeIntoShorthands: false,
+        roundingPrecision: -1
+      },
+      target: {
+        files: {
+          'public/css/min/master.min.css': [
+            'node_modules/bootstrap/dist/css/bootstrap.min.css',
+            'node_modules/ng-table/bundles/ng-table.min.css',
+            'node_modules/sweetalert/dist/sweetalert.css',
+            'public/css/main.css'
+          ]
+        }
+      }
     }
   })
 
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-uglify')
-  grunt.registerTask('default', ['uglify', 'watch'])
+  grunt.loadNpmTasks('grunt-contrib-cssmin')
+  grunt.registerTask('default', ['uglify', 'cssmin', 'watch'])
 }
