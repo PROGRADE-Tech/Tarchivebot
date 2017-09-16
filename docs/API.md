@@ -21,6 +21,12 @@ Check if an API key can be used to fetch messages from the API:
 curl -d '{"key":"your_key_here"}' -H 'Content-Type: application/json' http://localhost:3000/api/validatekey
 ```
 
+#### /api/wordcounts
+Get the most or least used words. Can be limited by passing `head`. This example returns the top 10 most used words:
+```
+curl -d '{"key":"your_key_here","head":10,"order":"asc"}' -H 'Content-Type: application/json' http://localhost:3000/api/wordcounts
+```
+
 ### Related modules
 - Functions to handle POST requests: `/libs/api/api.js`
 - Database functions: `/libs/api/apibackend.js`
