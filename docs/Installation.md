@@ -9,7 +9,11 @@ Once that's done you should deploy the database and edit the config file:
 
 1. `cp config/config.json.example config/config.json`
 2. `cp db/tarchive.db.example db/tarchive.db`
-3. `Edit the config/config.json file.`
+3. Edit the `config/config.json` file.
+
+Alternatively you can use the `setup.sh` script which executes the above steps for you:
+
+1. `./setup.sh`
 
 Now you're ready for the installation.
 
