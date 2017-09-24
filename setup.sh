@@ -63,6 +63,14 @@ else
     read answer
     if echo "$answer" | grep -iq "^y"; then
       cp -i $CFGEX $CFG
+      # PROMPT TO REPLACE DEFAULT TELEGRAM KEY
+      printf "$STATUS_PREFIX\t! Enter your Telegram Key (enter to skip): "
+      read answer_key
+      if [ -n "$answer_key" ]; then
+        sed -i -- "s/abcdefghi:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/$answer_key/g" $CFG
+      else
+        printf "$STATUS_PREFIX\t\tskipping Telegram key...\n"
+      fi
     else
       printf "$STATUS_PREFIX\t\tskipping...\n"
     fi
