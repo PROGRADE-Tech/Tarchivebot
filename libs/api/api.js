@@ -31,5 +31,19 @@ module.exports = {
         res.send(JSON.stringify(data))
       })
     })
+
+    webserver.app.post('/api/wordcounts', function (req, res) {
+      const key = req.body.key
+      const head = req.body.head // Top n
+      const order = req.body.order // 'asc' 'desc'
+
+      apiBackend.wordCounts(key, head, order, (error, data) => {
+        if (error) {
+          res.send(JSON.stringify({'error': error}))
+        } else {
+          res.send(JSON.stringify(data))
+        }
+      })
+    })
   }
 }
